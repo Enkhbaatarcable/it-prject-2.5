@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enkhbaatar Enkhbayar Portfolio</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      color: #e2e8f0;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 15px;
+    }
+
+    nav button {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e2e8f0;
+      padding: 10px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    nav button:hover {
+      background: #6366f1;
+      border-color: #6366f1;
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .tab-content {
+      display: none;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      animation: fade 0.35s ease;
+    }
+
+    .active { display: block; }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      font-size: 22px;
+      color: #a5b4fc;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #cbd5f5;
+    }
+
+    ul { margin-left: 20px; margin-top: 10px; }
+
+    li { margin-bottom: 8px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .card {
+      background: rgba(15,23,42,0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 18px;
+      border-radius: 16px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: #818cf8;
+      box-shadow: 0 10px 30px rgba(99,102,241,0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Enkhbaatar Enkhbayar</h1>
+  <p>Student • Learner • Creator</p>
+</header>
+
+<nav>
+  <button onclick="showTab('about')">About</button>
+  <button onclick="showTab('education')">Education</button>
+  <button onclick="showTab('projects')">Projects</button>
+  <button onclick="showTab('skills')">Skills</button>
+  <button onclick="showTab('contact')">Contact</button>
+</nav>
+
+<div class="container">
+
+  <div id="about" class="tab-content active">
+    <h2>About Me</h2>
+    <p>I am a student passionate about medicine and helping others. I enjoy learning new things, helping people deal with their problems, and making money.</p>
+  </div>
+
+  <div id="education" class="tab-content">
+    <h2>Education</h2>
+    <div class="grid">
+      <div class="card">
+        <p><b>School</b></p>
+        <p>Shildeg School of Mongolia</p>
+      </div>
+      <div class="card">
+        <p><b>Grade</b></p>
+        <p>10A</p>
+      </div>
+      <div class="card">
+        <p><b>Focus</b></p>
+        <p>Medicine - Science - English</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="projects" class="tab-content">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <p><b>Portfolio Website</b></p>
+        <p>Built using HTML and CSS.</p>
+      </div>
+      <div class="card">
+        <p><b>Social media page</b></p>
+        <p>Social media page to educate youth</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="skills" class="tab-content">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">Motivation</div>
+      <div class="card">Problem Solving</div>
+      <div class="card">Communication</div>
+      <div class="card">Teamwork</div>
+    </div>
+  </div>
+
+  <div id="contact" class="tab-content">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: e.enkhbaatar2028@gmail.com</p>
+      <p>Phone: +976 9512 8860</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Enkhbaatar Enkhbayar
+</footer>
+
+<script>
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
